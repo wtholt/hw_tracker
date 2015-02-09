@@ -1,0 +1,9 @@
+%form#edit_location_form
+  .form-inline
+    %label{:for => "location_name"} Name
+    = text_field_tag :location_name, location.name, name: 'location[name]', class: 'form-control'
+    %label{:for => "location_address"} Address
+    = text_field_tag :location_address, location.address, name: 'location[address]', class: 'form-control'
+    %a#update_item.btn.btn-primary{"data-location_id" => location.id}
+      Submit
+    %a#cancel_edit.btn.btn-default Cancel

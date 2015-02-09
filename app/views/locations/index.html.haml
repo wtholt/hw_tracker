@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-12
+      %h1 Locations
+      %ul#items_list
+        = render 'locations_list', locations: @locations
+  .row
+    .col-md-12
+      #form_container
+        = render 'new_location'
