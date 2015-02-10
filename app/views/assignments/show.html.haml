@@ -2,3 +2,16 @@
 = @assignment.name
 %br
 = @assignment.due_date
+
+%h3
+  Add Comment
+= form_for @comment, url: create_comment_assignment_path(@assignment) do |f|
+  = f.label :content
+  = f.text_area :content
+  %br
+  = f.submit
+- @comments.each do |comment|
+  = comment.content
+  %br
+  = link_to "Delete", destroy_comment_assignment_path(comment), method: :delete
+  %br

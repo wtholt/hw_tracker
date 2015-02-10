@@ -9,6 +9,8 @@ class AssignmentsController < ApplicationController
 
   def show
     @assignment = Assignment.find params[:id]
+    @comment = Comment.new
+    @comments = @assignment.comments
   end
 
   def edit
@@ -32,11 +34,30 @@ class AssignmentsController < ApplicationController
     redirect_to assignments_path
   end
 
+  def create_comment
+    @assignment = Assignment.find params[:id]
+    @comment = @assignment.comments.create comment_params
+    redirect_to assignment_path(@assignment)
+  end
+
+  def destroy_comment
+    @assignment = Assignment.find params[:id]
+    @comment = Comment.find params[:id]
+    @comment.destroy
+    redirect_to @comment.commentable
+  end
+
 private
   def assignment_params
     params.require(:assignment).permit(
       :name, 
       :due_date,
+    )
+  end
+
+  def comment_params
+    params.require(:comment).permit(
+      :content,
     )
   end
 end

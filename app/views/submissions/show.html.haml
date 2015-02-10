@@ -1,0 +1,13 @@
+%h1 Submission
+= @submission.name
+%h3
+  Add Comment
+= form_for @comment, url: create_comment_assignment_submission_path(@assignment, @submission) do |f|
+  = f.label :content
+  = f.text_area :content
+  %br
+  = f.submit
+- @comments.each do |comment|
+  = comment.content
+  %br
+  = link_to "Delete", destroy_comment_assignment_submission_path(@submission, comment), method: :delete

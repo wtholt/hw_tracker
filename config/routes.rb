@@ -11,7 +11,18 @@ Rails.application.routes.draw do
     end
   end
   resources :lessons
-  resources :assignments
+  resources :assignments do
+    member do 
+      post :create_comment
+      delete :destroy_comment
+    end
+    resources :submissions do 
+      member do 
+        post :create_comment
+        delete :destroy_comment
+      end
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
