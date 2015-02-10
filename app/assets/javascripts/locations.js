@@ -2,8 +2,11 @@ $(document).on("click", "#add_location_button", function() {
 
   $.post("/locations", $("#new_location_form").serialize(), function() {
     $("#location_name").val('');
-    console.log("Hello")
+    $("#location_address").val('');
   })
+    .fail(function(data) {
+      alert(data.responseText)
+    })
 });
 
 $(document).on("click", ".edit-location", function() {
