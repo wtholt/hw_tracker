@@ -1,8 +1,0 @@
-%form#new_location_form
-  .form-inline
-    %label{:for => "location_name"} Name
-    = text_field_tag :location_name, '', name: 'location[name]'
-    %label{:for => "location_address"} Address
-    = text_field_tag :location_address, '', name: 'location[address]'
-    %a#add_location_button.btn.btn-primary 
-      Add

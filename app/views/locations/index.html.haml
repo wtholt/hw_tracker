@@ -1,10 +1,18 @@
-.container
-  .row
-    .col-md-12
-      %h1 Locations
-      %ul#items_list
-        = render 'locations/locations_list', locations: @locations
-  .row
-    .col-md-12
-      #form_container
-        = render 'locations/new_location'
+%h1 Iron Yard Locations
+= link_to "New Location", new_location_path
+%br
+= link_to "Add Courses", new_lesson_path
+- @locations.each do |location|
+  %br
+  = link_to location.name, location_path(location)
+  %br
+  = location.address
+  %br
+  = location.city
+  %br
+  = location.state
+  %br
+  = location.zip
+  %br
+  = link_to "Edit", edit_location_path(location)
+  = link_to "Delete", location_path(location), method: :delete

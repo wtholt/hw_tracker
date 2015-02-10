@@ -27,6 +27,7 @@ gem "nested_form"
 
 gem 'html2haml'
 
+gem 'workflow', '~> 1.2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,11 @@
+%h1 Courses
+= link_to "Add Courses", new_lesson_path
+- @lessons.each do |lesson|
+  %br
+  = link_to lesson.name, lesson_path(lesson)
+  %br
+  = lesson.description
+  %br
+  = link_to "Edit", edit_lesson_path(lesson)
+  = link_to "Delete", lesson_path(lesson), method: :delete
+  %br
