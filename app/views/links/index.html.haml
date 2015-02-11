@@ -1,0 +1,10 @@
+%h1 Links
+%br
+/= link_to "Add Link", new_assignment_submission_link_path(@assignment, @submission, link)
+
+- @links.each do |link|
+  %br
+  = link_to link.url, assignment_submission_link_path(@assignment, @submission, link)
+  %br
+  = link_to "Edit", edit_assignment_submission_link_path(@assignment, @submission, link)
+  = link_to "Delete", assignment_submission_link_path(@assignment, @submission, link), method: :delete

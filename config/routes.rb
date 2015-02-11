@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -20,7 +21,11 @@ Rails.application.routes.draw do
       member do 
         post :create_comment
         delete :destroy_comment
+        patch :review_submission
+        patch :unfinish_submission
+        patch :finish_submission
       end
+      resources :links
     end
   end
 

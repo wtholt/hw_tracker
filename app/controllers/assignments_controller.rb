@@ -31,12 +31,16 @@ class AssignmentsController < ApplicationController
 
   def create
     @assignment = Assignment.create assignment_params
+    @assignment.user = current_user
+    @assignment.save
     redirect_to assignments_path
   end
 
   def create_comment
     @assignment = Assignment.find params[:id]
     @comment = @assignment.comments.create comment_params
+    @comment.user = current_user
+    @comment.save
     redirect_to assignment_path(@assignment)
   end
 

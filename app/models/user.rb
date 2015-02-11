@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :assignments
   has_many :submissions
+  has_many :comments, as: :commentable
   belongs_to :location
   has_many :location_lesson_users
   has_many :location_lessons, through: :location_lesson_users

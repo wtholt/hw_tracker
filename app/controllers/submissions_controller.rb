@@ -10,6 +10,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find params[:id]
     @comment = Comment.new
     @comments = @submission.comments
+    @links = @submission.links
   end
 
   def index
@@ -32,13 +33,9 @@ class SubmissionsController < ApplicationController
   def create
     @assignment = Assignment.find params[:assignment_id]
     @submission = @assignment.submissions.create submission_params
-    if @submission.save
-      flash[:notice] = 'Submission was successfully created.'
-      redirect_to assignment_submissions_path(@assignment)
-    else
-      flash[:error] = 'Submission was not saved!'
-      render :new
-    end
+    @submission.user = current_user
+    @submission.save
+    redirect_to assignment_submissions_path(@assignment)
   end
 
   def destroy
@@ -54,6 +51,8 @@ class SubmissionsController < ApplicationController
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:id]
     @comment = @submission.comments.create comment_params
+    @comment.user = current_user
+    @comment.save
     redirect_to assignment_submission_path(@assignment, @submission)
   end
 
@@ -63,6 +62,27 @@ class SubmissionsController < ApplicationController
     @comment = Comment.find params[:id]
     @comment.destroy
     redirect_to assignment_submission_path(@comment.commentable.assignment, @comment.commentable)
+  end
+
+  def review_submission
+    @assignment = Assignment.find params[:assignment_id]
+    @submission = Submission.find params[:id]
+    @submission.review!
+    redirect_to assignment_submission_path(@assignment, @submission)
+  end
+
+  def unfinish_submission
+    @assignment = Assignment.find params[:assignment_id]
+    @submission = Submission.find params[:id]
+    @submission.unfinish!
+    redirect_to assignment_submission_path(@assignment, @submission)
+  end
+
+  def finish_submission
+    @assignment = Assignment.find params[:assignment_id]
+    @submission = Submission.find params[:id]
+    @submission.finish!
+    redirect_to assignment_submission_path(@assignment, @submission)
   end
 
 private

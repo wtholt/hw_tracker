@@ -1,5 +1,11 @@
 %h1 Submission
 = @submission.name
+%br
+= link_to "Add Link", new_assignment_submission_link_path(@assignment, @submission)
+%h4
+  Submission Status
+= workflow_state_helper_method(@submission)
+= submission_state?(@submission)
 %h3
   Add Comment
 = form_for @comment, url: create_comment_assignment_submission_path(@assignment, @submission) do |f|

@@ -1,0 +1,17 @@
+= form_for @user do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :github
+  = f.text_field :github
+  %br
+  = f.label :email
+  = f.email_field :email
+  %br
+  = f.label(:admin, "Instructor?")
+  Yes
+  = f.radio_button(:admin, true)
+  No
+  = f.radio_button(:admin, false)
+  %br
+  = f.submit

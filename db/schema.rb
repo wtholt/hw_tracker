@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210211234) do
+ActiveRecord::Schema.define(version: 20150211155725) do
 
   create_table "assignments", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150210211234) do
     t.string   "commentable_type", limit: 255
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "user_id",          limit: 4
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -36,6 +37,13 @@ ActiveRecord::Schema.define(version: 20150210211234) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "location_id", limit: 4
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string   "url",           limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "submission_id", limit: 4
   end
 
   create_table "location_lesson_users", force: :cascade do |t|
