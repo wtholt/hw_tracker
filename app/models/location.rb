@@ -1,8 +1,6 @@
 class Location < ActiveRecord::Base
   has_many :location_lessons
   has_many :lessons, through: :location_lessons
-  has_many :lessons
-  has_many :users
 
 
   STATES = [

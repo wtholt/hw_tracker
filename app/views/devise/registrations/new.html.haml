@@ -10,11 +10,11 @@
     %br
     = f.text_field :github
   .field
-    = f.label(:admin, "Instructor?")
-    Yes
+    = f.label(:admin)
     = f.radio_button(:admin, true)
-    No
+    = f.label(:admin, "Yes")
     = f.radio_button(:admin, false)
+    = f.label(:admin, "No")
   .field
     = f.label :email
     %br/
@@ -30,6 +30,17 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
+  Select a Location:
+  %br
+  - Location.all.each do |location|
+    %strong 
+      = location.city
+    %br
+    Select Courses:
+    - location.location_lessons.each do |location_lesson|
+      = check_box_tag 'user[location_lesson_ids][]', location_lesson.id
+      = location_lesson.lesson.name
+    %br
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

@@ -1,5 +1,6 @@
 %h1 Submissions
 - @submissions.each do |submission|
+  %br
   = link_to submission.name, assignment_submission_path(@assignment, submission)
   %br
   = submission.description

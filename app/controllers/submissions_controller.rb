@@ -1,5 +1,13 @@
 class SubmissionsController < ApplicationController
-  
+  load_and_authorize_resource
+  skip_load_and_authorize_resource :only => [:new, 
+    :create, 
+    :submission_params, 
+    :index, 
+    :show,
+    :create_comment
+  ]
+
   def new
     @assignment = Assignment.find params[:assignment_id]
     @submission = @assignment.submissions.new

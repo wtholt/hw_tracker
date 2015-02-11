@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-
+  load_and_authorize_resource
   def new
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:submission_id]

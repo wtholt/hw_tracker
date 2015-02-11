@@ -1,4 +1,11 @@
 class AssignmentsController < ApplicationController
+  load_and_authorize_resource
+   skip_load_and_authorize_resource :only => [
+    :index, 
+    :show,
+    :create_comment,
+    :comment_params
+  ]
   def new
     @assignment = Assignment.new
   end
@@ -54,8 +61,10 @@ class AssignmentsController < ApplicationController
 private
   def assignment_params
     params.require(:assignment).permit(
-      :name, 
+      :name,
+      :description, 
       :due_date,
+      :comment_params,
     )
   end
 

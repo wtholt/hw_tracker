@@ -1,6 +1,7 @@
 %h1 Assignments
 %br
-= link_to "New Assignment", new_assignment_path
+- if can? :create, @assignment
+  = link_to "New Assignment", new_assignment_path
 %br
 .container
   .row
@@ -9,9 +10,13 @@
         %br
         = link_to assignment.name, assignment_path(assignment)
         %br
+        = assignment.description
+        %br
         = assignment.due_date
         %br
-        = link_to "Edit", edit_assignment_path(assignment)
-        = link_to "Delete", assignment_path(assignment), method: :delete
+        - if can? :update, @assignment
+          = link_to "Edit", edit_assignment_path(assignment)
+        - if can? :destroy, @assignment
+          = link_to "Delete", assignment_path(assignment), method: :delete
         %br
         = link_to "New Submission", new_assignment_submission_path(assignment)

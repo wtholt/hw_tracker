@@ -1,4 +1,7 @@
 %h1 Hello World
 
 = link_to "Iron Yard Locations", locations_path
-= link_to "New Assignment", new_assignment_path
+- if can? :create, @assignment
+  = link_to "New Assignment", new_assignment_path
+= link_to "View Assignments", assignments_path
+= link_to "View Users", users_path

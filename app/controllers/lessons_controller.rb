@@ -1,10 +1,15 @@
 class LessonsController < ApplicationController
-  
+  load_and_authorize_resource
   def new
     @lesson = Lesson.new
   end
 
   def index
+    @lessons = Lesson.all
+  end
+
+  def select
+    @user = current_user
     @lessons = Lesson.all
   end
 

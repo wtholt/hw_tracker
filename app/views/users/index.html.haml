@@ -7,7 +7,7 @@
   %br
   = user.email
   %br
-  = user.location.name
-  %br
-  = link_to "Edit User", edit_user_path(user)
-  = link_to "Delete User", user_path(user), method: :delete
+  - if can? :update, @user
+    = link_to "Edit User", edit_user_path(user)
+  - if can? :destroy, @user
+    = link_to "Delete User", user_path(user), method: :delete

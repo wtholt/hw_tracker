@@ -1,18 +1,25 @@
 %h1 Iron Yard Locations
-= link_to "New Location", new_location_path
+- if can? :create, @location
+  = link_to "New Location", new_location_path
 %br
-= link_to "Add Courses", new_lesson_path
-- @locations.each do |location|
-  %br
-  = link_to location.name, location_path(location)
-  %br
-  = location.address
-  %br
-  = location.city
-  %br
-  = location.state
-  %br
-  = location.zip
-  %br
-  = link_to "Edit", edit_location_path(location)
-  = link_to "Delete", location_path(location), method: :delete
+- if can? :create, @lesson
+  = link_to "Add Courses", new_lesson_path
+.container
+  .row
+    - @locations.each do |location|
+      .col-md-4
+        %br
+        = link_to location.name, location_path(location)
+        %br
+        = location.address
+        %br
+        = location.city
+        %br
+        = location.state
+        %br
+        = location.zip
+        %br
+        - if can? :update, @location
+          = link_to "Edit", edit_location_path(location)
+        - if can? :destroy, @location
+          = link_to "Delete", location_path(location), method: :delete

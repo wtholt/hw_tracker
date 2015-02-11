@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       get 'select'
     end
   end
-  resources :lessons
+  resources :lessons do
+    collection do 
+      get 'select'
+    end
+  end
   resources :assignments do
     member do 
       post :create_comment

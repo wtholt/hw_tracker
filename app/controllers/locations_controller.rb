@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:index, :show]
   def index
     @locations = Location.all
   end
