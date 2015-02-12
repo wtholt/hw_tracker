@@ -1,46 +1,48 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :name
+.container
+  %h2.form-signin
+    Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :name
+      %br
+      = f.text_field :name
+    .field
+      = f.label :github
+      %br
+      = f.text_field :github
+    .field
+      = f.label(:admin)
+      = f.radio_button(:admin, true)
+      = f.label(:admin, "Yes")
+      = f.radio_button(:admin, false)
+      = f.label(:admin, "No")
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true
+    .field
+      = f.label :password
+      - if @validatable
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "off"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off"
+    Select a Location:
     %br
-    = f.text_field :name
-  .field
-    = f.label :github
-    %br
-    = f.text_field :github
-  .field
-    = f.label(:admin)
-    = f.radio_button(:admin, true)
-    = f.label(:admin, "Yes")
-    = f.radio_button(:admin, false)
-    = f.label(:admin, "No")
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @validatable
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  Select a Location:
-  %br
-  - Location.all.each do |location|
-    %strong 
-      = location.city
-    %br
-    Select Courses:
-    - location.location_lessons.each do |location_lesson|
-      = check_box_tag 'user[location_lesson_ids][]', location_lesson.id
-      = location_lesson.lesson.name
-    %br
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    - Location.all.each do |location|
+      %strong 
+        = location.city
+      %br
+      Select Courses:
+      - location.location_lessons.each do |location_lesson|
+        = check_box_tag 'user[location_lesson_ids][]', location_lesson.id
+        = location_lesson.lesson.name
+      %br
+    .actions
+      = f.submit "Sign up", class: "btn btn-lg btn-primary"
+  = render "devise/shared/links"

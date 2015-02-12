@@ -7,8 +7,13 @@
 %br
 ********************************
 %br
-= nested_form_for @assignment do |f|
-  = f.fields_for :comments do |comment_form|
-    = comment_form.text_field :content
-    = comment_form.link_to_remove "Remove this comment"
-  = f.link_to_add "Add a comment", :comments
+- @comments.each do |comment|
+  = comment.content
+  %br
+  = link_to "Delete", destroy_comment_assignment_path(@assignment, comment), method: :delete
+  Add Comment
+= form_for @comment, url: create_comment_assignment_path(@assignment) do |f|
+  = f.label :content
+  = f.text_area :content
+  %br
+  = f.submit
