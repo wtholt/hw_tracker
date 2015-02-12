@@ -2,6 +2,7 @@
 = @submission.name
 %br
 = link_to "Add Link", new_assignment_submission_link_path(@assignment, @submission)
+= link_to "View Links", assignment_submission_links_path(@assignment, @submission)
 %h4
   Submission Status
 = workflow_state_helper_method(@submission)

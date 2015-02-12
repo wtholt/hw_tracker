@@ -1,6 +1,4 @@
 class LocationsController < ApplicationController
-  load_and_authorize_resource
-  skip_authorize_resource :only => [:index, :show]
   def index
     @locations = Location.all
   end
@@ -17,6 +15,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find params[:id]
+    @lessons = @location.lessons
   end
 
   def create

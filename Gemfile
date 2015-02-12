@@ -33,6 +33,7 @@ gem 'faker'
 
 gem "letter_opener", :group => :development
 
+gem 'will_paginate', '~> 3.0.6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

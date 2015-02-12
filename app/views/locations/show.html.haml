@@ -10,3 +10,15 @@
 = @location.state
 %br
 = @location.zip
+%br
+%h3 Courses Offered
+%br
+= hidden_field_tag 'location[lesson_ids][]', ''
+- @lessons.each do |lesson|
+  %strong 
+    Name:
+    = lesson.name
+  %br
+  Description:
+  = lesson.description
+  %br

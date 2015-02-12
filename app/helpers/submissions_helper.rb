@@ -20,7 +20,7 @@ module SubmissionsHelper
       (link_to "Complete", finish_submission_assignment_submission_path(@assignment, @submission), method: :patch),
     ]
     incomplete_links = [
-      (link_to "Review", finish_submission_assignment_submission_path(@assignment, @submission), method: :patch),
+      (link_to "Review", review_submission_assignment_submission_path(@assignment, @submission), method: :patch),
       (link_to "Complete", finish_submission_assignment_submission_path(@assignment, @submission), method: :patch),
 
     ]

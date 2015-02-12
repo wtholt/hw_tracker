@@ -1,5 +1,4 @@
 class LinksController < ApplicationController
-  load_and_authorize_resource
   def new
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:submission_id]
@@ -26,7 +25,6 @@ class LinksController < ApplicationController
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:submission_id]
     @link = @submission.links.create link_params
-    @link.user = current_user
     @link.save
     redirect_to assignment_submission_links_path(@assignment, @submission)
   end
@@ -51,7 +49,8 @@ private
   def link_params
     params.require(:link).permit(
       :url,
-      :submission_id
+      :submission_id,
+      :user_id
     )
   end
 

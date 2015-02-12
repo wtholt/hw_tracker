@@ -1,13 +1,8 @@
 class AssignmentsController < ApplicationController
-  load_and_authorize_resource
-   skip_load_and_authorize_resource :only => [
-    :index, 
-    :show,
-    :create_comment,
-    :comment_params
-  ]
+  
   def new
     @assignment = Assignment.new
+    authorize! :new, @assignment
   end
 
   def index
@@ -56,7 +51,6 @@ class AssignmentsController < ApplicationController
   end
 
   def destroy_comment
-    @assignment = Assignment.find params[:id]
     @comment = Comment.find params[:id]
     @comment.destroy
     redirect_to @comment.commentable
@@ -75,6 +69,7 @@ private
   def comment_params
     params.require(:comment).permit(
       :content,
+      :user_id
     )
   end
 end

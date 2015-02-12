@@ -8,10 +8,10 @@
   = f.label :email
   = f.email_field :email
   %br
-  = f.label(:admin, "Instructor?")
-  Yes
+  = f.label(:admin)
   = f.radio_button(:admin, true)
-  No
+  = f.label(:admin, "Yes")
   = f.radio_button(:admin, false)
+  = f.label(:admin, "No")
   %br
   = f.submit

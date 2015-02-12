@@ -1,13 +1,4 @@
-class SubmissionsController < ApplicationController
-  load_and_authorize_resource
-  skip_load_and_authorize_resource :only => [:new, 
-    :create, 
-    :submission_params, 
-    :index, 
-    :show,
-    :create_comment
-  ]
-
+class SubmissionsController < ApplicationController 
   def new
     @assignment = Assignment.find params[:assignment_id]
     @submission = @assignment.submissions.new
@@ -24,6 +15,7 @@ class SubmissionsController < ApplicationController
   def index
     @assignment = Assignment.find params[:assignment_id]
     @submissions = @assignment.submissions
+    # authorize! :index, @submissions
   end
 
   def edit
@@ -60,13 +52,15 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find params[:id]
     @comment = @submission.comments.create comment_params
     @comment.user = current_user
-    @comment.save
-    redirect_to assignment_submission_path(@assignment, @submission)
+    if @comment.save
+      UserMailer.comment_email(current_user).deliver
+      redirect_to assignment_submission_path(@assignment, @submission)
+    else
+      render :new
+    end
   end
 
   def destroy_comment
-    @assignment = Assignment.find params[:assignment_id]
-    @submission = Submission.find params[:id]
     @comment = Comment.find params[:id]
     @comment.destroy
     redirect_to assignment_submission_path(@comment.commentable.assignment, @comment.commentable)
