@@ -44,6 +44,7 @@ class AssignmentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       UserMailer.comment_email(current_user, @comment).deliver
+      UserMailer.assignment_user_comment_email(@assignment, @comment).deliver
       redirect_to assignment_path(@assignment)
     else
       render :new
