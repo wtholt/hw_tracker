@@ -4,11 +4,11 @@
       .jumbotron-organizer.opaque
     .col-md-6
       .jumbotron-times.opaque
-.container.section
+.container
   .row
     .col-md-12.text-center
       %h1
-        WorkHub
+        = link_to "WorkHub", interfaces_path
   .row
     .col-md-12.text-center
       %h3
@@ -18,12 +18,6 @@
   .row
     .col-md-4
       .building-icon
-    .col-md-4
-      .clock-icon
-    .col-md-4
-      .home-icon
-  .row
-    .col-md-4
       %h3
         Enterprise Ready
       %p
@@ -34,6 +28,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     .col-md-4
+      .clock-icon
       %h3
         Efficient
       %p
@@ -44,6 +39,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     .col-md-4
+      .home-icon
       %h3
         Balanced
       %p
@@ -52,7 +48,7 @@
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.   
 %br
 .container
   .row
@@ -118,29 +114,25 @@
 %br
 .container
   .row
-    .jumbotron-books
-.container.section
-  .row
-    .col-md-12.text-center
-      %h1 Interface
-.container.section
+    .jumbotron-books.opaque
+.container.section-1
   .row
     .col-md-3
       %h4
-        = link_to "New Assignment", new_assignment_path
-        .glyphicon.glyphicon-home
+        = link_to "New Assignment", new_assignment_path, class: "section-link"
+        .glyphicon.glyphicon-home.section-link
     .col-md-3
       %h4
-        = link_to "View Assignments", assignments_path
-        .glyphicon.glyphicon-search
+        = link_to "View Assignments", assignments_path, class: "section-link"
+        .glyphicon.glyphicon-search.section-link
     .col-md-3
       %h4
-        = link_to "Iron Yard Locations", locations_path
-        .glyphicon.glyphicon-road
+        = link_to "Iron Yard Locations", locations_path, class: "section-link"
+        .glyphicon.glyphicon-road.section-link
     .col-md-3
       %h4
-        = link_to "View Users", users_path
-        .glyphicon.glyphicon-user
+        = link_to "View Instructors/Students", users_path, class: "section-link"
+        .glyphicon.glyphicon-user.section-link
   .row
     .col-md-6
       %p
@@ -161,8 +153,8 @@
 %br
 .container
   .row
-    .jumbotron-bridge
-.container.section
+    .jumbotron-bridge.opaque
+.container
   .row
     .col-md-12.text-center
       %h2

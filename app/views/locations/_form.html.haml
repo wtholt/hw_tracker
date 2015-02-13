@@ -9,7 +9,7 @@
   = f.text_field :city, class: "form-control", placeholder: "City"
   %br
   = f.label :state
-  = f.select :state, options_for_select(Location::STATES, f.object.state)
+  = f.select :state, options_for_select(Location::STATES, f.object.state), class: "form-control"
   %br
   = f.label :zip
   = f.text_field :zip, class: "form-control", placeholder: "Zip Code"
@@ -22,3 +22,4 @@
     = lesson.description
     %br
   = f.submit class: "btn-success"
+%br

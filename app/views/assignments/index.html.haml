@@ -5,7 +5,8 @@
   .row
     .col-md-12.text-center
       %h1 Assignments
-      = link_to "New Assignment", new_assignment_path
+      - if can? :create, @assignment
+        = link_to "New Assignment", new_assignment_path
 %br
 .container
   .row

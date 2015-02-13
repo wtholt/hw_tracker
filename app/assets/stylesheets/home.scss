@@ -1,7 +1,5 @@
 body {
   font-family: 'Droid Sans', sans-serif;
-  // background-color: #558C89;
-
 }
 
 
@@ -17,6 +15,14 @@ body {
   width: 100px;
 }
 
+.image-octocat-smaller {
+  background-image: url("github.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 75px;
+  width: 75px;
+}
+
 .image-ror {
   background-image: url("ror.png");
   background-image: no-repeat;
@@ -25,12 +31,28 @@ body {
   width: 100px;
 }
 
+.image-ror-smaller {
+  background-image: url("ror.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 75px;
+  width: 75px;
+}
+
 .image-heroku {
   background-image: url("heroku.png");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
   width: 100px;
+}
+
+.image-heroku-smaller {
+  background-image: url("heroku.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 75px;
+  width: 75px;
 }
 
 .container-navbar {
@@ -92,6 +114,17 @@ body {
   border-radius: 5px;
 }
 
+.jumbotron-phone {
+  background-image: url("phone.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 100% 65%;
+  padding: 150px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  border-radius: 5px;
+}
+
 .building-icon {
   background-image: url("building_icon.png");
   background-image: no-repeat;
@@ -117,7 +150,6 @@ body {
 }
 
 .section {
-  background-color: snow;
   border-radius: 5px;
 }
 
@@ -129,6 +161,15 @@ body {
   background-color: #22313F;
   color: #fff;
   border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+.section-link {
+  color: #fff;
+}
+
+.section-link:hover {
+  color: #ff7148;
 }
 
 .notice {

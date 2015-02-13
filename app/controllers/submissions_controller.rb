@@ -10,6 +10,7 @@ class SubmissionsController < ApplicationController
     @comment = Comment.new
     @comments = @submission.comments
     @links = @submission.links
+    authorize! :show, @submission
   end
 
   def index
@@ -21,6 +22,7 @@ class SubmissionsController < ApplicationController
   def edit
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:id]
+    authorize! :update, @submission
   end
 
   def update
@@ -41,6 +43,7 @@ class SubmissionsController < ApplicationController
   def destroy
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:id]
+    authorize! :destroy, @submission
     @submission.destroy
     respond_to do |format|
       format.html {redirect_to assignment_submissions_path(@assignment), notice: 'Submission deleted.'}
@@ -69,6 +72,7 @@ class SubmissionsController < ApplicationController
   def review_submission
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:id]
+    authorize! :review, @submission
     @submission.review!
     redirect_to assignment_submission_path(@assignment, @submission)
   end
@@ -76,6 +80,7 @@ class SubmissionsController < ApplicationController
   def unfinish_submission
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:id]
+    authorize! :unfinish, @submission
     @submission.unfinish!
     redirect_to assignment_submission_path(@assignment, @submission)
   end
@@ -83,6 +88,7 @@ class SubmissionsController < ApplicationController
   def finish_submission
     @assignment = Assignment.find params[:assignment_id]
     @submission = Submission.find params[:id]
+    authorize! :finish, @submission
     @submission.finish!
     redirect_to assignment_submission_path(@assignment, @submission)
   end
