@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
   def assignment_user_comment_email(assignment, comment)
     @comment = comment
     @assignment = assignment
-    mail(subject: "Comment Notification")
+    mail(to: assignment.user.email, subject: "Comment Notification")
   end
 
   def submission_user_comment_email(submission, comment)
