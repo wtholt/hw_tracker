@@ -1,4 +1,6 @@
 = @user.name
 
 %p
-  Thank you for commenting!
+  A new comment has been added by #{@comment.user.name}: 
+= @comment.content
+

@@ -43,7 +43,7 @@ class AssignmentsController < ApplicationController
     @comment = @assignment.comments.create comment_params
     @comment.user = current_user
     if @comment.save
-      UserMailer.comment_email(current_user).deliver
+      UserMailer.comment_email(current_user, @comment).deliver
       redirect_to assignment_path(@assignment)
     else
       render :new
