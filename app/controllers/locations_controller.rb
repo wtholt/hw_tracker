@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    @locations = Location.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new

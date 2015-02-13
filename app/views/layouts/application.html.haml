@@ -2,13 +2,16 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title StudentHwTracker
+    %title WorkHub - The Iron Yard
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    %link{:href => "http://fonts.googleapis.com/css?family=Lato", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans", :rel => "stylesheet", :type => "text/css"}/
   %body
     = render 'home/navbar'
-    %p.notice= notice
-    %p.alert= alert
+    .container
+      .row
+        .col-md-12.text-center
+          %p.notice= notice
+          %p.alert= alert
     = yield

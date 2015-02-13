@@ -1,17 +1,27 @@
-%h1 Assignments
-%br
-- if can? :create, @assignment
-  = link_to "New Assignment", new_assignment_path
+.container
+  .row
+    .jumbotron-books
+.container
+  .row
+    .col-md-12.text-center
+      %h1 Assignments
+      = link_to "New Assignment", new_assignment_path
 %br
 .container
   .row
     - @assignments.each do |assignment|
       .col-md-4
         %br
+        %strong
+          Assignment:
         = link_to assignment.name, assignment_path(assignment)
         %br
+        %strong
+          Description:
         = assignment.description
         %br
+        %strong
+          Due-Date:
         = assignment.due_date
         %br
         - if can? :update, @assignment

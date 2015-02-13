@@ -1,17 +1,111 @@
 body {
-  // background-image: url("steps.jpg");
-  background-image: no-repeat;
-  background-size: cover;
-  background-position: 50% 10%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Droid Sans', sans-serif;
+  // background-color: #558C89;
 
 }
+
 
 .image-1 {
   image: url("steps.jpg")
 }
 
-.container-navbar {
-  background-color: inherit;
+.image-octocat {
+  background-image: url("github.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
 }
 
+.image-ror {
+  background-image: url("ror.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.image-heroku {
+  background-image: url("heroku.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.container-navbar {
+  background-color: #D9853B;
+}
+
+.jumbotron-organizer {
+  background-image: url("organizer.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 50% 10%;
+  padding: 150px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  border-radius: 5px;
+}
+
+.jumbotron-books {
+  background-image: url("books.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 50% 10%;
+  padding: 150px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  border-radius: 5px;
+}
+
+.jumbotron-bridge {
+  background-image: url("bridge.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 100% 80%;
+  padding: 150px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  border-radius: 5px;
+}
+
+.jumbotron-city {
+  background-image: url("city.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 100% 10%;
+  padding: 150px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  border-radius: 5px;
+}
+
+.building-icon {
+  background-image: url("building_icon.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.clock-icon {
+  background-image: url("clock_icon.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.home-icon {
+  background-image: url("home_icon.png");
+  background-image: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.section {
+  background-color: snow;
+  border-radius: 5px;
+}

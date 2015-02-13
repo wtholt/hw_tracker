@@ -1,9 +1,18 @@
-%h1 Submissions
-- @submissions.each do |submission|
-  %br
-  = link_to submission.name, assignment_submission_path(@assignment, submission)
-  %br
-  = submission.description
-  %br
-  = link_to "Edit", edit_assignment_submission_path(@assignment, submission)
-  = link_to "Delete", assignment_submission_path(@assignment, submission), method: :delete
+.container
+  .row
+    .jumbotron-books
+.container
+  .row
+    .col-md-12.text-center
+      %h1 Submissions
+.container
+  .row
+    - @submissions.each do |submission|
+      .col-md-4
+        %br
+        = link_to submission.name, assignment_submission_path(@assignment, submission)
+        %br
+        = submission.description
+        %br
+        = link_to "Edit", edit_assignment_submission_path(@assignment, submission)
+        = link_to "Delete", assignment_submission_path(@assignment, submission), method: :delete

@@ -1,17 +1,32 @@
-%h1 Users
+.container
+  .row
+    .jumbotron-books
+.container
+  .row
+    .col-md-12.text-center
+      %h1 Users
 .container
   .row
     - @users.each do |user|
       .col-md-4
         %br
+        %strong
+          Name:
         = link_to user.name, user_path(user)
         %br
+        %strong
+          GitHub:
         = user.github
         %br
+        %strong
+          Email:
         = user.email
         %br
         - if can? :update, @user
           = link_to "Edit User", edit_user_path(user)
         - if can? :destroy, @user
           = link_to "Delete User", user_path(user), method: :delete
-= will_paginate @users
+.container
+  .row
+    .col-md-12.text-center
+      = will_paginate @users
