@@ -52,6 +52,7 @@ class AssignmentsController < ApplicationController
 
   def destroy_comment
     @comment = Comment.find params[:id]
+    authorize! :destroy, @comment
     @comment.destroy
     redirect_to @comment.commentable
   end

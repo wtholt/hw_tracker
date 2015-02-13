@@ -1,5 +1,5 @@
 = form_for [@assignment, @submission, @link] do |f|
   = f.label :url
-  = f.text_field :url
+  = f.text_field :url, class: "form-control", placeholder: "Enter URL"
   %br
-  = f.submit
+  = f.submit class: "btn-success"

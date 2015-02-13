@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:notice] = "Access denied."
+    flash[:notice] = "Access denied. You do not have authorization to view that page."
     redirect_to root_url
   end
 end

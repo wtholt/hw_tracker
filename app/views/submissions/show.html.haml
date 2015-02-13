@@ -11,24 +11,35 @@
       = @submission.name
       %br
       = link_to "Add Link", new_assignment_submission_link_path(@assignment, @submission)
-      = link_to "View Links", assignment_submission_links_path(@assignment, @submission)
+      %br
+      - @links.each do |link|
+        = link.url
+        %br
       %h4
         %strong Submission Status
       = workflow_state_helper_method(@submission)
       %br
       - if can? :update, @submission
         = submission_state?(@submission)
-      %h3
+      .border
+      - @comments.each do |comment|
+        %br
+        %strong
+          Comment:
+        = comment.content
+        %br
+        %strong
+          Posted by:
+        = comment.user.name
+        = link_to "Delete", destroy_comment_assignment_submission_path(@submission, comment), method: :delete
+      .border
+      %h5
         Add Comment
       = form_for @comment, url: create_comment_assignment_submission_path(@assignment, @submission) do |f|
         = f.label :content
         = f.text_area :content, class: "form-control", placeholder: "Add a Comment"
         %br
-        = f.submit
-      - @comments.each do |comment|
-        = comment.content
-        %br
-        = link_to "Delete", destroy_comment_assignment_submission_path(@submission, comment), method: :delete
+        = f.submit class: "btn-success"
     .col-md-6
       %h3
         Assignment Info
@@ -46,3 +57,4 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+%br

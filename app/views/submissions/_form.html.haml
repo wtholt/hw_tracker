@@ -1,9 +1,9 @@
 = form_for [@assignment, @submission] do |f|
   = f.label :name
-  = f.text_field :name
+  = f.text_field :name, class: "form-control", placeholder: "Title"
   %br
   = f.label :description
-  = f.text_area :description
+  = f.text_area :description, class: "form-control", placeholder: "Submission"
   %br
   / = link_to "Add Link", new_assignment_submission_link_path(@assignment, submission)
-  = f.submit
+  = f.submit class: "btn-success"

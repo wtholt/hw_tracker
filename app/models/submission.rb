@@ -3,6 +3,7 @@ class Submission < ActiveRecord::Base
   belongs_to :assignment
   has_many :comments, as: :commentable
   has_many :links, dependent: :destroy
+  accepts_nested_attributes_for :links, :allow_destroy => true
 
   include Workflow
   workflow do

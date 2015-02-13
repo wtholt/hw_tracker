@@ -37,7 +37,7 @@ body {
   background-color: #D9853B;
 }
 
-.jumbotron-organizer {
+.jumbotron-organizer.opaque {
   background-image: url("organizer.jpg");
   background-image: no-repeat;
   background-size: cover;
@@ -81,6 +81,17 @@ body {
   border-radius: 5px;
 }
 
+.jumbotron-times {
+  background-image: url("times.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 100% 10%;
+  padding: 150px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  border-radius: 5px;
+}
+
 .building-icon {
   background-image: url("building_icon.png");
   background-image: no-repeat;
@@ -108,4 +119,22 @@ body {
 .section {
   background-color: snow;
   border-radius: 5px;
+}
+
+.border {
+  border: 1px solid #000000;
+}
+
+.section-1 {
+  background-color: #22313F;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.notice {
+  color: red;
+}
+
+.alert {
+  color: red;
 }

@@ -26,7 +26,7 @@ class LinksController < ApplicationController
     @submission = Submission.find params[:submission_id]
     @link = @submission.links.create link_params
     @link.save
-    redirect_to assignment_submission_links_path(@assignment, @submission)
+    redirect_to assignment_submission_path(@assignment, @submission)
   end
 
   def destroy

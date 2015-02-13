@@ -1,48 +1,8 @@
-.container
+.container-fluid.section-1
   .row
-    .col-md-12.text-center
-      %h1 Assignment
-.container
-  .row
-    .col-md-6
-      %strong
-        Assignment:
-      = @assignment.name
-      %br
-      %strong
-        Due-Date:
-      = @assignment.due_date
-      %br
-      %strong
-        Description:
-      = @assignment.description
-      %br
+    .col-md-4
       %h3
-        Comments
-      .border
-      - @comments.each do |comment|
-        %strong
-          Comment:
-        = comment.content
-        %br
-        %strong
-          Posted by:
-          = comment.user.name
-        %br
-        = link_to "Delete", destroy_comment_assignment_path(comment), method: :delete
-        %br
-        .border
-      %br
-        %strong
-          Add Comment
-      = form_for @comment, url: create_comment_assignment_path(@assignment) do |f|
-        = f.label :content
-        = f.text_area :content, class: "form-control"
-        %br
-        = f.submit class: "btn-success"
-    .col-md-6
-      %h3
-        Assignment Info
+        Resources
       %p
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -50,6 +10,9 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .col-md-4
+      %h3
+        Contact Us
       %p
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -57,4 +20,14 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-%br
+    .col-md-4
+      %h3
+        Useful Links
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+

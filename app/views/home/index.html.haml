@@ -1,6 +1,9 @@
 .container
   .row
-    .jumbotron-organizer
+    .col-md-6
+      .jumbotron-organizer.opaque
+    .col-md-6
+      .jumbotron-times.opaque
 .container.section
   .row
     .col-md-12.text-center
@@ -123,17 +126,21 @@
 .container.section
   .row
     .col-md-3
-      = link_to "New Assignment", new_assignment_path
-      .glyphicon.glyphicon-home
+      %h4
+        = link_to "New Assignment", new_assignment_path
+        .glyphicon.glyphicon-home
     .col-md-3
-      = link_to "View Assignments", assignments_path
-      .glyphicon.glyphicon-search
+      %h4
+        = link_to "View Assignments", assignments_path
+        .glyphicon.glyphicon-search
     .col-md-3
-      = link_to "Iron Yard Locations", locations_path
-      .glyphicon.glyphicon-search
+      %h4
+        = link_to "Iron Yard Locations", locations_path
+        .glyphicon.glyphicon-road
     .col-md-3
-      = link_to "View Users", users_path
-      .glyphicon.glyphicon-user
+      %h4
+        = link_to "View Users", users_path
+        .glyphicon.glyphicon-user
   .row
     .col-md-6
       %p
@@ -158,8 +165,8 @@
 .container.section
   .row
     .col-md-12.text-center
-      %h1
-        Contact Us
+      %h2
+        Cutting-Edge
   %br
   .row
     .col-md-6
@@ -178,3 +185,4 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+%br
