@@ -8,6 +8,7 @@ class Ability
     else
       can :show, Submission, :user_id => user.id
       can :update, Submission, :user_id => user.id
+      can :destroy, Comment, :user_id => user.id
     end
   end
 end
