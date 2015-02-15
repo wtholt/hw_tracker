@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+  $('.notice').delay(1000).fadeOut()
+  $('.alert').delay(2000).fadeOut()
   
   $('.opaque').hover(function() {
     $(this).animate({
