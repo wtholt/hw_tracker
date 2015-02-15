@@ -30,8 +30,7 @@
         - if can? :destroy, @assignment
           = link_to "Delete", assignment_path(assignment), method: :delete
         %br
-        - if can? :read, @submissions
-          = link_to "View Submissions", assignment_submissions_path(assignment)
+        = link_to "View Submissions", assignment_submissions_path(assignment)
         %br
         = link_to "New Submission", new_assignment_submission_path(assignment)
 %br

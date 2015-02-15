@@ -66,6 +66,7 @@ class SubmissionsController < ApplicationController
 
   def destroy_comment
     @comment = Comment.find params[:id]
+    authorize! :destroy, @comment
     @comment.destroy
     redirect_to assignment_submission_path(@comment.commentable.assignment, @comment.commentable)
   end
