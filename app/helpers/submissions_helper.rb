@@ -1,14 +1,14 @@
 module SubmissionsHelper
   def submission_workflow(submission_object)
-    submission_object.workflow_state
+    submission_object.current_state
   end
 
   def workflow_state_helper_method(submission)
-    if submission.workflow_state == "review"
+    if submission.current_state == "review"
       "Submission is being reviewed"
-    elsif submission.workflow_state == "incomplete"
+    elsif submission.current_state == "incomplete"
       "Submission is incomplete"
-    elsif submission.workflow_state == "complete"
+    elsif submission.current_state == "complete"
       "Submission is complete"
     end  
   end
