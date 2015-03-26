@@ -4,11 +4,11 @@ body {
 
 
 .image-1 {
-  image: url("steps.jpg")
+  image: url("<%= asset_path('steps.jpg') %> ");
 }
 
 .image-octocat {
-  background-image: url("github.png");
+  background-image: url("<%= asset_path('github.png') %> ");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
@@ -16,7 +16,7 @@ body {
 }
 
 .image-octocat-smaller {
-  background-image: url("github.png");
+  background-image: url("<%= asset_path('github.png') %> ");
   background-image: no-repeat;
   background-size: cover;
   height: 75px;
@@ -24,7 +24,7 @@ body {
 }
 
 .image-ror {
-  background-image: url("ror.png");
+  background-image: url("<%= asset_path('ror.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
@@ -32,7 +32,7 @@ body {
 }
 
 .image-ror-smaller {
-  background-image: url("ror.png");
+  background-image: url("<%= asset_path('ror.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 75px;
@@ -40,7 +40,7 @@ body {
 }
 
 .image-heroku {
-  background-image: url("heroku.png");
+  background-image: url("<%= asset_path('heroku.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
@@ -48,7 +48,7 @@ body {
 }
 
 .image-heroku-smaller {
-  background-image: url("heroku.png");
+  background-image: url("<%= asset_path('heroku.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 75px;
@@ -60,7 +60,7 @@ body {
 }
 
 .jumbotron-organizer.opaque {
-  background-image: url("organizer.jpg");
+  background-image: url("<%= asset_path('organizer.jpg') %>");
   background-image: no-repeat;
   background-size: cover;
   background-position: 50% 10%;
@@ -71,7 +71,7 @@ body {
 }
 
 .jumbotron-books {
-  background-image: url("books.jpg");
+  background-image: url("<%= asset_path('books.jpg') %>");
   background-image: no-repeat;
   background-size: cover;
   background-position: 50% 10%;
@@ -82,7 +82,7 @@ body {
 }
 
 .jumbotron-bridge {
-  background-image: url("bridge.jpg");
+  background-image: url("<%= asset_path('bridge.jpg') %>");
   background-image: no-repeat;
   background-size: cover;
   background-position: 100% 80%;
@@ -93,7 +93,7 @@ body {
 }
 
 .jumbotron-city {
-  background-image: url("city.jpg");
+  background-image: url("<%= asset_path('city.jpg') %>");
   background-image: no-repeat;
   background-size: cover;
   background-position: 100% 10%;
@@ -104,7 +104,7 @@ body {
 }
 
 .jumbotron-times {
-  background-image: url("times.jpg");
+  background-image: url("<%= asset_path('city.jpg') %>");
   background-image: no-repeat;
   background-size: cover;
   background-position: 100% 10%;
@@ -115,7 +115,7 @@ body {
 }
 
 .jumbotron-phone {
-  background-image: url("phone.jpg");
+  background-image: url("<%= asset_path('phone.jpg') %>");
   background-image: no-repeat;
   background-size: cover;
   background-position: 100% 65%;
@@ -126,7 +126,7 @@ body {
 }
 
 .building-icon {
-  background-image: url("building_icon.png");
+  background-image: url("<%= asset_path('building-icon.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
@@ -134,7 +134,7 @@ body {
 }
 
 .clock-icon {
-  background-image: url("clock_icon.png");
+  background-image: url("<%= asset_path('clock-icon.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
@@ -142,7 +142,7 @@ body {
 }
 
 .home-icon {
-  background-image: url("home_icon.png");
+  background-image: url("<%= asset_path('home_icon.png') %>");
   background-image: no-repeat;
   background-size: cover;
   height: 100px;
