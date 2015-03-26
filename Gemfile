@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
+
+gem 'pg', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -42,10 +44,13 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+
 gem 'quiet_assets', group: :development
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -69,5 +74,15 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
   gem 'shoulda-matchers'
+
+  gem 'capybara'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'chromedriver-helper'
+  gem 'database_cleaner', '~> 1.4.0'
+
+  gem 'simplecov', :require => false
+
 end
 
