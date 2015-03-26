@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
+
+gem 'rails_12factor', group: :production
 
 gem 'pg', group: :production
 # Use SCSS for stylesheets
